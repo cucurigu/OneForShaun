@@ -12,7 +12,7 @@ describe('Auth', function () {
         expect(auth.name).toBe('auth');
         expect(auth.version).toBe('0.0.1');
         expect(auth.published).toBe('2017-05-18');
-        expect(auth.md5).toBe('c1715cc2a27b4599b4dd89405dfbc8af');
+        expect(auth.md5).toBe('80fcfbacf2d8c4a44b8e1081959726ee');
 
         expect(auth.mock).not.toBe('undefined');
         expect(auth.orize).not.toBe('undefined');
