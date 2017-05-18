@@ -7,15 +7,18 @@ Identity Service
 | **Authorization URL** | `https://staging-auth.wallstreetdocs.com/oauth/authorize` |
 |---|---|
 | **Token URL** | `https://staging-auth.wallstreetdocs.com/oauth/token` |
-| **Client ID** | coding_test |
+|---|---|
+| **Client ID** | **coding_test** |
+|---|---|
 | **Client Secret** | bw_____6HT__________ |
-| **Callback URL** | http://localhost:3000 |
+|---|---|
+| **Callback URL** | `http://localhost:3000` |
 
 
 ### Test User Credentials
 
+| **User ID** | **codingtest** |
 |---|---|
-| **User ID** | codingtest |
 | **Password** | password_____ |
 
 ### Obtaining your User Profile
