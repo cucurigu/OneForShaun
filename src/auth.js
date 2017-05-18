@@ -7,17 +7,23 @@ var _config   = require('./config'),
         mock: true
     };
 
+function _choose(mock) {
+    return (typeof mock !== 'undefined' && envelope.mock === true) ? _mockAuth.instance(_config) : _restAuth.instance(_config);
+}
+
 function contextualize(envelope) {
     // adds session specific from middleware
-    return envelope;
+    return envelope; // and return
 }
 
 function authorize(envelope) {
-
+    envelope = contextualize(envelope);
+    return _choose(envelope.mock).authorize(envelope);
 }
 
 function token(envelope) {
-
+    envelope = contextualize(envelope);
+    return _choose(envelope.mock).token(envelope);
 }
 
 module.exports = {
