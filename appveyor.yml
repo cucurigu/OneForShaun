@@ -17,5 +17,10 @@ test_script:
   # run tests
   - npm test
 
+# only builds from master after each pull request
+branches:
+  only:
+    - master
+
 # Don't build.
 build: off
