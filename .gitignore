@@ -8,6 +8,8 @@ yarn-error.log*
 # IDE
 .idea/
 
+# Reports
+reports/eslint/*.txt
 # Runtime data
 pids
 *.pid
