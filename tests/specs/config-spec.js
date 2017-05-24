@@ -34,7 +34,7 @@ describe('Config', function () {
         expect(config.name).toBe('config');
         expect(config.version).toBe('0.0.1');
         expect(config.published).toBe('2017-05-18');
-        expect(config.md5).toBe('ed774a37a483a784c118101edf1a12a9');
+        expect(config.md5).toBe('ddef198b0ef11a9a0000370352fd71e4');
     });
 });
 
