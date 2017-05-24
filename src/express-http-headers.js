@@ -1,9 +1,13 @@
 'use strict';
 
-var config = require('./config');
+var config = require('./config'),
+    headers = {
+        applicationName: config.package.name,
+        applicationVersion: config.package.version
+    };
 
-module.exports = {
-    applicationName: config.package.name,
-    applicationVersion: config.package.version,
-    'Access-Control-Allow-Origin': config.app.url.Callback
-};
+    if (config.express.cors === true) {
+        headers['Access-Control-Allow-Origin'] = '*'
+    }
+
+module.exports = headers;

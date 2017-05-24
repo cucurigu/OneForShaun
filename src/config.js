@@ -28,6 +28,7 @@ module.exports = {
         }
     },
     express: {
+        cors: true,
         appname: 'MyAPI',
         port: myport
     },

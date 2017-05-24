@@ -12,7 +12,7 @@ describe('Expected headers', function () {
 
         expect(httpHdrs['applicationName']).toBe(pckg.name);       // package.json
         expect(httpHdrs['applicationVersion']).toBe(pckg.version); // via config
-        expect(httpHdrs['Access-Control-Allow-Origin']).toBe(conf.app.url.Callback);
+        expect(httpHdrs['Access-Control-Allow-Origin']).toBe('*');
     });
 });
 
