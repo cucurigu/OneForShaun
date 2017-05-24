@@ -8,7 +8,7 @@ var _config   = require('./config'),
     };
 
 function _choose(mock) {
-    return (typeof mock !== 'undefined' && envelope.mock === true) ? _mockAuth.instance(_config) : _restAuth.instance(_config);
+    return (typeof mock !== 'undefined' && mock === true) ? _mockAuth.instance(_config) : _restAuth.instance(_config);
 }
 
 function contextualize(envelope) {

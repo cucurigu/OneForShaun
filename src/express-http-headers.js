@@ -6,8 +6,8 @@ var config = require('./config'),
         applicationVersion: config.package.version
     };
 
-    if (config.express.cors === true) {
-        headers['Access-Control-Allow-Origin'] = '*'
-    }
+if (config.express.cors === true) {
+    headers['Access-Control-Allow-Origin'] = '*';
+}
 
 module.exports = headers;
