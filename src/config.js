@@ -7,6 +7,7 @@ module.exports = {
     name: 'config',
     package: require('./../package.json'),
     node_env: nvl(process.env['NODE_ENV'], 'development'),
+    oAuthRevalidateTTL: nvl(process.env['REVALIDATE_OAUTH'], 60), // 60 secs = 1 min over external oAuth
     app: {
         client: {
             ID: 'coding_test',

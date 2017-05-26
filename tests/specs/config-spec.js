@@ -26,6 +26,10 @@ describe('Config', function () {
         expect(config.node_env).toBe('test'); // set my jasmine
     });
 
+    it('revalidate ttl', function () {
+        expect(config.oAuthRevalidateTTL).toBe(60); // default 1 min
+    });
+
     it('API values', function () {
 
         expect(config.app.client.ID).toBe('coding_test');
@@ -38,7 +42,7 @@ describe('Config', function () {
         expect(config.name).toBe('config');
         expect(config.version).toBe('0.0.1');
         expect(config.published).toBe('2017-05-18');
-        expect(config.md5).toBe('d375bc5975435a66db629ba792e59b4e');
+        expect(config.md5).toBe('ac46ac8c11a4de9e98decae8ed98b438');
     });
 });
 

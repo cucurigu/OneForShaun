@@ -4,9 +4,10 @@ var _instance  = { obj: null };
 
 function ExpressApp() {
 
-    this._id  = '';
-    this._app = {};
-    this._views = '';
+    this._id      = '';
+    this._views   = '';
+    this._apiRoot = '';
+    this._cookieName = '';
     this.xa = {};
     this.console = console;
 
@@ -31,6 +32,16 @@ function ExpressApp() {
         return _instance.obj;
     };
 
+    this.session = function(cookie) {
+        this._cookieName = cookie;
+
+        return this;
+    };
+
+    this.middleWare = function() {
+
+        return this;
+    };
 
     this.httpHeaders = function() {
         // adding app-seocific headers
