@@ -22,6 +22,10 @@ describe('Config', function () {
         expect(config.package.version).toBe('0.0.1');
     });
 
+    it('default/fall-back NODE_ENV', function () {
+        expect(config.node_env).toBe('test'); // set my jasmine
+    });
+
     it('API values', function () {
 
         expect(config.app.client.ID).toBe('coding_test');
@@ -34,7 +38,7 @@ describe('Config', function () {
         expect(config.name).toBe('config');
         expect(config.version).toBe('0.0.1');
         expect(config.published).toBe('2017-05-18');
-        expect(config.md5).toBe('ddef198b0ef11a9a0000370352fd71e4');
+        expect(config.md5).toBe('d375bc5975435a66db629ba792e59b4e');
     });
 });
 

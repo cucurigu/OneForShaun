@@ -1,6 +1,6 @@
 'use strict';
 
-var config = require('./config'),
+var config = require('./../config'),
     headers = {
         applicationName: config.package.name,
         applicationVersion: config.package.version

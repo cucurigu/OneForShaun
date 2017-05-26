@@ -1,6 +1,6 @@
 require('./../../src/sign-test')(__filename);
 
-var httpHdrs = require('./../../src/express-http-headers'),
+var httpHdrs = require('./../../src/express/http-headers'),
     pckg     = require('./../../package.json');
 
 describe('Expected headers', function () {

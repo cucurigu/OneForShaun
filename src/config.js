@@ -6,6 +6,7 @@ var nvl    = require('./nvl'),
 module.exports = {
     name: 'config',
     package: require('./../package.json'),
+    node_env: nvl(process.env['NODE_ENV'], 'development'),
     app: {
         client: {
             ID: 'coding_test',
