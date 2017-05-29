@@ -2,7 +2,7 @@
 
 var _instance  = { obj: null };
 
-function ExpressApp() {
+function CustomExpressApp() {
 
     this._id      = '';
     this._views   = '';
@@ -21,13 +21,14 @@ function ExpressApp() {
 
     this.instance = function(mock) {
         if (_instance.obj === null) {
-            _instance.obj = (typeof mock !== 'object') ? (new ExpressApp()) : mock;
+            _instance.obj = (typeof mock !== 'object') ? (new CustomExpressApp()) : mock;
             _instance.obj.xa.config     = require('./../config');
             _instance.obj.xa.cfg        = _instance.obj.xa.config.express;
             _instance.obj.xa.express    = require('express');
             _instance.obj.xa.router     = _instance.obj.xa.express.Router();
             _instance.obj.xa.app        = _instance.obj.xa.express();
             _instance.obj.xa.bodyParser = require('body-parser');
+            _instance.obj.xa.srv        = {};
         }
         return _instance.obj;
     };
@@ -77,9 +78,8 @@ function ExpressApp() {
     this.run = function() {
         this.console.info(this.xa.cfg.appname + ' is running on port ' + this.xa.cfg.port);
         this.console.info('Open: http://127.0.0.1:' + this.xa.cfg.port +'/');
-        this.xa.app.listen(this.xa.cfg.port);
-        return this;
+        this.xa.srv = this.xa.app.listen(this.xa.cfg.port);
     };
 }
 
-module.exports = (new ExpressApp());
+module.exports = (new CustomExpressApp());
