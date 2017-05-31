@@ -1,6 +1,7 @@
 'use strict';
 
 var nvl    = require('./nvl'),
+    unique = require('./unique'),
     myport = nvl(process.env['PORT'], 9080);
 
 module.exports = {
@@ -21,12 +22,15 @@ module.exports = {
         }
     },
     express: {
+        cookie_prefix: 'myapp',
         cors: true,
         appname: 'MyAPI',
         port: myport
     },
     version: '0.0.1',
     published: '2017-05-18',
-    md5: require('md5-file').sync(__filename)
+    md5: require('md5-file').sync(__filename),
+    cookiePrefix: function () { return this.express.cookie_prefix; },
+    cookieUniqueWPrefix: function () { return unique(this.cookiePrefix()); }
 };
 

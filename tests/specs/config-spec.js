@@ -39,10 +39,14 @@ describe('Config', function () {
         expect(config.app.url.Token).toBe('/oauth/token');
         expect(config.app.url.Callback).toBe('http://localhost:' + config.express.port);
 
+        expect(config.cookiePrefix()).toBe('myapp');
+        expect(config.cookieUniqueWPrefix().substr(0, 6)).toBe('myapp-');
+        expect(config.cookieUniqueWPrefix().length).toBe(38);
+
         expect(config.name).toBe('config');
         expect(config.version).toBe('0.0.1');
         expect(config.published).toBe('2017-05-18');
-        expect(config.md5).toBe('ac46ac8c11a4de9e98decae8ed98b438');
+        expect(config.md5).toBe('fa63e4feeb64686b758ebc90b0a5ced9');
     });
 });
 
